@@ -2,7 +2,7 @@ import type { LoginFormData, SignupFormData } from "./validation";
 // import { v2 } from "cloudinary";
 export const API_BASE_URL = "https://threed-bandit.onrender.com/api/v1";
 
-export interface ApiResponse<T = unknown> {
+export interface ApiResponse<T> {
   success: boolean;
   data?: T;
   error?: string;
@@ -14,7 +14,11 @@ export interface AuthResponse {
 }
 
 export class ApiError extends Error {
-  constructor(message: string, public status: number, public response?: unknown) {
+  constructor(
+    message: string,
+    public status: number,
+    public response?: unknown
+  ) {
     super(message);
     this.name = "ApiError";
   }
@@ -89,7 +93,7 @@ export async function signupUser(
   });
 }
 
-export async function logoutUser(): Promise<ApiResponse> {
+export async function logoutUser(): Promise<ApiResponse<{}>> {
   return apiRequest("/auth/logout", {
     method: "POST",
   });
@@ -171,7 +175,15 @@ export const uploadToPresignedUrl = async (
   policy: string,
   timestamp: string,
   headers?: Record<string, string>
-): Promise<ApiResponse> => {
+): Promise<
+  ApiResponse<{
+    id: string;
+    name: string;
+    size: number;
+    uploadedAt: number;
+    url?: string;
+  }>
+> => {
   const allHeaders: Record<string, string> = {
     "Content-Type": file.type || "application/octet-stream",
     ...headers,
