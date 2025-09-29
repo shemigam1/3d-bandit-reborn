@@ -1,6 +1,6 @@
 import type { LoginFormData, SignupFormData } from "./validation";
 // import { v2 } from "cloudinary";
-export const API_BASE_URL = "http://localhost:5052/api/v1";
+export const API_BASE_URL = "https://threed-bandit.onrender.com/api/v1";
 
 export interface ApiResponse<T = any> {
   success: boolean;
