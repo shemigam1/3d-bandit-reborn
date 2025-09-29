@@ -1,5 +1,5 @@
 import * as React from "react";
-import { GalleryVerticalEnd, LogOutIcon } from "lucide-react";
+import { LogOutIcon } from "lucide-react";
 
 import {
   Sidebar,
@@ -9,21 +9,10 @@ import {
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
-  SidebarMenuSub,
-  SidebarMenuSubButton,
-  SidebarMenuSubItem,
 } from "@/components/ui/sidebar";
 import Link from "next/link";
 import { ProfileCard } from "./profile-card";
 import { BanditIcon } from "./ui/bandit-icon";
-
-// This is sample data.
-const data = [
-  {
-    title: "Logout",
-    url: "",
-  },
-];
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   return (

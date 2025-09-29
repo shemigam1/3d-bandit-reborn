@@ -1,5 +1,3 @@
-import { GalleryVerticalEnd } from "lucide-react";
-
 import { LoginForm } from "@/components/login-form";
 import { BanditIcon } from "@/components/ui/bandit-icon";
 

@@ -68,12 +68,12 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
         // Validate data before saving
         if (token && user) {
           // Save to localStorage
-          authUtils.setToken(token);
+          authUtils.setToken(token as string);
           authUtils.setUser(user);
 
           // Update state
-          setToken(token);
-          setUser(user);
+          setToken(token as string);
+          setUser(user as User);
 
           return true;
         }

@@ -16,7 +16,7 @@ export const authUtils = {
     localStorage.removeItem(USER_KEY);
   },
 
-  setUser: (user: any) => {
+  setUser: (user: {}) => {
     localStorage.setItem(USER_KEY, JSON.stringify(user));
   },
 
