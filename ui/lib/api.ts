@@ -93,7 +93,7 @@ export async function signupUser(
   });
 }
 
-export async function logoutUser(): Promise<ApiResponse<{}>> {
+export async function logoutUser(): Promise<ApiResponse<AuthResponse>> {
   return apiRequest("/auth/logout", {
     method: "POST",
   });

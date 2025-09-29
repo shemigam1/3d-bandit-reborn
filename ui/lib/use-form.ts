@@ -11,7 +11,7 @@ export interface FormState<T> {
   submitError: string | null;
 }
 
-export function useForm<T extends Record<string, any>>(initialData: T) {
+export function useForm<T extends Record<string, unknown>>(initialData: T) {
   const [state, setState] = useState<FormState<T>>({
     data: initialData,
     errors: [],
